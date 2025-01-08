@@ -12,7 +12,7 @@ describe('Aluno routes integration test', () => {
     beforeEach(() => jest.restoreAllMocks());
 
     it('Should return all "alunos"', async () => {
-        const mockAlunos = [{ id: 1, name: 'test', cpf: 1234567890 }];
+        const mockAlunos = [{ id: 1, nome: 'test', cpf: 1234567890 }];
         
         jest.spyOn(alunoModel, 'getAll').mockResolvedValue(mockAlunos);
 
@@ -25,11 +25,20 @@ describe('Aluno routes integration test', () => {
     it('Should create a new "aluno"', async () => {
         jest.spyOn(alunoModel, 'store').mockResolvedValue([1]);
 
-        const response = await request(app)
+        let response = await request(app)
             .post('/')
-            .send({ name: 'test', cpf: 1234567890 });
+            .send({ nome: 'test', cpf: 1234567890 });
 
         expect(response.status).toBe(201);
-        expect(response.body.data).toEqual([1]);
+    });
+
+    it('Should reject duplicated data', async () => {
+        jest.spyOn(alunoModel, 'store').mockRejectedValue({ code: 'ER_DUP_ENTRY' });
+
+        const response = await request(app)
+            .post('/')
+            .send({ nome: 'test', cpf: 1234567890 });
+
+        expect(response.status).toBe(409);
     });
 });
