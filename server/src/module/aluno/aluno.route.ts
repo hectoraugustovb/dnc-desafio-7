@@ -14,7 +14,7 @@ router.get('/', (req: Request, res: Response, next: NextFunction) => {
 
 router.post('/', async (req: Request, res: Response, next: NextFunction) => {
   alunoModel.store(req.body)
-    .then(data => res.status(200).json({ data }))
+    .then(data => res.status(201).json({ data }))
     .catch(next);
 });
 
