@@ -7,4 +7,7 @@ module.exports = {
     password: 'sqldb',
     database: 'mysql',
   },
+  migrations: {
+    directory: './src/database/migrations',
+  },
 };

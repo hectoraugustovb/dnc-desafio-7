@@ -1,5 +1,5 @@
 import knex from 'knex';
-import knexConfig from '../config/knex';
+import knexConfig from './config/knex';
 
 let conn: any;
 
