@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "node16",
+    "lib": ["ES2023"],
+
+    "allowJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node16",
+    "allowSyntheticDefaultImports": true,
+
+    "sourceMap": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+  },
+
+  "include": [
+    "**/*.ts",
+    "**/*.js"
+  ]
+}
