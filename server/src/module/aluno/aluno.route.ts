@@ -20,7 +20,7 @@ router.post('/', async (req: Request, res: Response, next: NextFunction) => {
         if (error.code === 'ER_DUP_ENTRY')
           return res.status(409).json({ error: 'Aluno já cadastrado com esse CPF' });
   
-        next();
+        next(error);
       });
   }
 });

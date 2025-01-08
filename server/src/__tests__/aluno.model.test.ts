@@ -1,10 +1,17 @@
 import alunoModel from "../module/aluno/aluno.model";
 
 describe('Aluno model test', () => {
-    it('Should return all "alunos"', async () => {
-        const aluno = await alunoModel.getAll();
+    beforeEach(() => jest.restoreAllMocks());
 
-        expect(Array.isArray(aluno)).toBeTruthy();
+    it('Should return all "alunos"', async () => {
+        const mockAlunos = [{ id: 1, nome: 'test', cpf: 1234567890 }];
+        
+        jest.spyOn(alunoModel, 'getAll').mockResolvedValue(mockAlunos);
+
+        const alunos = await alunoModel.getAll();
+
+        expect(Array.isArray(alunos)).toBeTruthy();
+        expect(alunos).toEqual(mockAlunos);
     });
 
     it('Should create a new "aluno"', async () => {
@@ -17,7 +24,5 @@ describe('Aluno model test', () => {
 
         expect(mockStore).toHaveBeenCalledWith({ nome: 'test', cpf: 1234567890 });
         expect(result).toEqual({ nome: 'test', cpf: 1234567890 });
-
-        mockStore.mockRestore();
     });
 });
