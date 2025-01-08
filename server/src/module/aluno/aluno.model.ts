@@ -1,4 +1,4 @@
-import knex from '../../service/knex';
+import knex from '../../database/knex';
 
 const getAll = async () => {
   return knex('aluno').select();

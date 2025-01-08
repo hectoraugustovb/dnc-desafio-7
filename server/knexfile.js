@@ -1,2 +1,2 @@
-const knexConfig = require('./src/config/knex');
+const knexConfig = require('./src/database/config/knex');
 module.exports = knexConfig;
