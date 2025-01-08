@@ -6,7 +6,10 @@ const router = Router();
 router.get('/', (req: Request, res: Response, next: NextFunction) => {
   alunoModel.getAll()
     .then(data => res.status(200).json({ data }))
-    .catch(next);
+    .catch(error => {
+      console.log(error);
+      next();
+    });
 });
 
 router.post('/', async (req: Request, res: Response, next: NextFunction) => {
