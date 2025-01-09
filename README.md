@@ -1,5 +1,17 @@
 # DNC Desafio 7
 
+## **Técnologias**
+
+### **Linguagens**
+- [JavaScript(NodeJS)](https://nodejs.org/en)
+- [TypeScript](https://www.typescriptlang.org)
+- 
+### **Bibliotecas**
+- [Express.js](https://expressjs.com/)
+- [Knex.js](https://knexjs.org)
+- [Jest](https://jestjs.io/)
+
+
 ## **Endpoints**
 
 ### **Alunos**
