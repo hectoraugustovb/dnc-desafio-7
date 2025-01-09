@@ -32,7 +32,7 @@
 - **POST /alunos**
   - Cria um novo aluno.
   - **Parâmetros**:
-    - `name`, `cpf`:
+    - `nome`, `cpf`:
   - **Exemplo de resposta:**
     - Código de Status: `201 Created`
       - Descrição: Aluno criado com sucesso.
