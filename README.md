@@ -64,7 +64,7 @@
    npm knex migrate:latest
    ```
    
-5. Teste a aplicação:
+5. Teste a aplicação (Opcional):
 
    ```
    npm test
