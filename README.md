@@ -4,7 +4,7 @@
 
 ### **Alunos**
 
-- **GET /alunos**
+- **GET /aluno**
   - Retorna todos os alunos cadastrados.
   - **Exemplo de resposta:**
     ```json
@@ -29,7 +29,7 @@
     }
     ```
 
-- **POST /alunos**
+- **POST /aluno**
   - Cria um novo aluno.
   - **Parâmetros**:
     - `nome`, `cpf`:
